@@ -21,6 +21,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/deoplete.nvim'
   Plug 'Shougo/denite.nvim'
   Plug 'ctrlpvim/ctrlp.vim'  
+  Plug 'zxqfl/tabnine-vim'
+  Plug 'editorconfig/editorconfig-vim'
+ 
+  call system('which flow')
+  if v:shell_error == 0 || $PLUG_UPDATE == 1
+    Plug 'steelsojka/deoplete-flow'
+  else 
+    echo 'Install FLOW pls'
+  endif
+
 
   " Colors
 

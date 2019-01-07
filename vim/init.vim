@@ -16,5 +16,5 @@ source $CONFIG_DIR/plugins.vim
 source $CONFIG_DIR/shortcuts.vim
 source $CONFIG_DIR/editor.config.vim
 
-colorscheme antares
+colorscheme onedark
 highlight Normal ctermbg=NONE guibg=NONE
