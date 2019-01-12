@@ -1,4 +1,13 @@
-call plug#begin('~/.vim/plugged')
+let $PLUGDIR='~/.vim/plugged'
+
+if has('nvim') 
+ let $PLUGDIR=$PLUGDIR.'nvim'
+else 
+ let $PLUGDIR=$PLUGDIR.'vim'
+endif 
+
+
+call plug#begin($PLUGDIR)
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'ervandew/supertab'
   Plug 'eugen0329/vim-esearch'
@@ -18,7 +27,13 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'Shougo/deoplete.nvim'
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
   Plug 'Shougo/denite.nvim'
   Plug 'ctrlpvim/ctrlp.vim'  
 

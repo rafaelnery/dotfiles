@@ -1,5 +1,9 @@
 let $CONFIG_DIR=fnamemodify(expand("$MYVIMRC"), ":p:h")
 
+if !has('nvim') 
+  let $CONFIG_DIR=$CONFIG_DIR.'/.vim'
+endif
+
 set background=dark
 set termguicolors
 
@@ -16,5 +20,5 @@ source $CONFIG_DIR/plugins.vim
 source $CONFIG_DIR/shortcuts.vim
 source $CONFIG_DIR/editor.config.vim
 
-colorscheme antares
+colorscheme onedark
 highlight Normal ctermbg=NONE guibg=NONE
