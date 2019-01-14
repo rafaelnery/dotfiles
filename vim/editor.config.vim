@@ -18,7 +18,6 @@ set wildignore  =*.o,*~,*.pyc,CVS,*~,node_modules            " Ignora certos tip
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
-autocmd BufWritePre *.py :%s/\s\+$//e           " Remove os espcaços em branco no fim das linhas
 
 
 " Syntax {
