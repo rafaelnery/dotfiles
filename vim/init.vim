@@ -21,3 +21,4 @@ source $CONFIG_DIR/shortcuts.vim
 source $CONFIG_DIR/editor.config.vim
 
 colorscheme gruvbox
+

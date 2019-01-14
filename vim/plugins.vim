@@ -7,9 +7,9 @@
 let $PLUGDIR='~/.vim/plugged'
 
 if has('nvim') 
- let $PLUGDIR=$PLUGDIR.'nvim'
+ let $PLUGDIR=$PLUGDIR.'/nvim'
 else 
- let $PLUGDIR=$PLUGDIR.'vim'
+ let $PLUGDIR=$PLUGDIR.'/vim'
 endif 
 
 call plug#begin($PLUGDIR)
