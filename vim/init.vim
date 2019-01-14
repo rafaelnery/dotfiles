@@ -1,5 +1,9 @@
 let $CONFIG_DIR=fnamemodify(expand("$MYVIMRC"), ":p:h")
 
+if !has('nvim') 
+  let $CONFIG_DIR=$CONFIG_DIR.'/.vim'
+endif
+
 set background=dark
 set termguicolors
 
