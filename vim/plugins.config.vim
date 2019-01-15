@@ -2,15 +2,28 @@
 "
 " vim: set sw=2 ts=2 sts=2 et tw=100 foldmarker={,} foldlevel=0 foldmethod=marker:
 
+" CtrlP {
+
+  if executable('rp') " RIPGREP
+    set grepprg=rg\ --color=never
+    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+    let g:ctrlp_use_caching = 0
+  elseif executable('ag') " SILVER SEARCHER
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+  endif
+" }
+
 " Airline {
   let g:airline#extensions#tabline#enabled = 1
   let g:airline_powerline_fonts = 1
 " }
 
 " VimESearch {
-  let g:esearch = {
-  \ 'default_mappings': 1,
-  \}
+  
+  let g:esearch = { 'default_mappings': 1, 'adapter': 'rg', 'regex': 1, 'recover_regex': 1 }
+  let g:esearch#out#win#open = 'enew'
 " }
 
 " TSNeoVim{

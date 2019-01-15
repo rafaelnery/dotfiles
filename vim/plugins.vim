@@ -31,6 +31,7 @@ call plug#begin($PLUGDIR)
   Plug 'sheerun/vim-polyglot'
   Plug 'vim-scripts/groovy.vim'
   Plug 'majutsushi/tagbar'
+  Plug 'ryanoasis/vim-devicons'
 
   if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
