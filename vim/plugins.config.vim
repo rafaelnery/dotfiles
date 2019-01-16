@@ -4,11 +4,13 @@
 
 " CtrlP {
 
-  if executable('rp') " RIPGREP
+  if executable('rg') " RIPGREP
+    let g:search_adapter='rg'
     set grepprg=rg\ --color=never
     let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
     let g:ctrlp_use_caching = 0
   elseif executable('ag') " SILVER SEARCHER
+    let g:search_adapter='ag'
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
     let g:ctrlp_use_caching = 0
@@ -22,7 +24,7 @@
 
 " VimESearch {
   
-  let g:esearch = { 'default_mappings': 1, 'adapter': 'rg', 'regex': 1, 'recover_regex': 1 }
+  let g:esearch = { 'default_mappings': 1, 'adapter': g:search_adapter, 'regex': 1, 'recover_regex': 1 }
   let g:esearch#out#win#open = 'enew'
 " }
 
