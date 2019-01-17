@@ -67,6 +67,8 @@ call plug#begin($PLUGDIR)
   Plug 'Haron-Prime/Antares'
   Plug 'cocopon/iceberg.vim'
   Plug 'morhetz/gruvbox'
+  Plug 'jefersonbelmiro/vim-womprat'
+  Plug 'tomasr/molokai'
 " }
 call plug#end()
 
