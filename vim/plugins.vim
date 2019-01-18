@@ -44,8 +44,6 @@ call plug#begin($PLUGDIR)
   call system('which flow')
   if v:shell_error == 0 || $PLUG_UPDATE == 1
     Plug 'steelsojka/deoplete-flow'
-  else 
-    echo 'Install FLOW pls'
   endif
 
   Plug 'Shougo/denite.nvim'
