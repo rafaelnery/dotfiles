@@ -24,24 +24,13 @@
 
 " VimESearch {
   
-  let g:esearch = { 'default_mappings': 1, 'adapter': g:search_adapter, 'regex': 1, 'recover_regex': 1 }
+"  let g:esearch = { 'default_mappings': 1, 'adapter': g:search_adapter, 'regex': 1, 'recover_regex': 1 }
   let g:esearch#out#win#open = 'enew'
-" }
-
-" TSNeoVim{
-  let g:deoplete#enable_at_startup = 1
 " }
 
 " NerdTree  {
   let NERDTreeMinimalUI = 1
   let NERDTreeDirArrows = 1
-" }
-
-" Sytastic {
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list            = 1
-  let g:syntastic_check_on_open            = 1
-  let g:syntastic_check_on_wq              = 1
 " }
 
 " TagBar {
@@ -65,10 +54,6 @@
   \ }                                                                               
   " }
   
-" Syntastic {
- " let g:syntastic_typescript_checkers = ['tslint']
- " let g:syntastic_always_populate_loc_list = 1
- " let g:syntastic_auto_loc_list = 1
- " let g:syntastic_check_on_open = 1
- " let g:syntastic_check_on_wq = 0
+" CoC {
 " }
+

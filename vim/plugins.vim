@@ -26,44 +26,25 @@ call plug#begin($PLUGDIR)
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'vim-syntastic/syntastic'
   Plug 'othree/eregex.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'vim-scripts/groovy.vim'
   Plug 'majutsushi/tagbar'
   Plug 'ryanoasis/vim-devicons'
-
-  if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
-  else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-  endif
-  
-  call system('which flow')
-  if v:shell_error == 0 || $PLUG_UPDATE == 1
-    Plug 'steelsojka/deoplete-flow'
-  endif
-
   Plug 'Shougo/denite.nvim'
   Plug 'ctrlpvim/ctrlp.vim'  
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'davidhalter/jedi-vim'
   Plug 'scrooloose/nerdcommenter'
+  Plug 'Shougo/neco-vim'
+  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+  Plug 'neoclide/coc-neco'
 " }
 " CSS, SASS, SCSS e OTHERS {
   Plug 'hail2u/vim-css3-syntax'
   Plug 'cakebaker/scss-syntax.vim'
 " }
-" TS/JS {
-  Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-  Plug 'HerringtonDarkholme/yats.vim'
-" }
+
 " Colors {
-  Plug 'joshdick/onedark.vim'
-  Plug 'Haron-Prime/Antares'
-  Plug 'cocopon/iceberg.vim'
   Plug 'morhetz/gruvbox'
   Plug 'jefersonbelmiro/vim-womprat'
   Plug 'tomasr/molokai'

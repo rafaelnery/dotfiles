@@ -27,12 +27,18 @@ map <leader>p :set paste!<CR>
 " }
 
 if has("gui_running")
-  inoremap <C-Space> <C-x><C-o>
+"  inoremap <C-Space> <C-x><C-o>
+  inoremap <silent><expr> <c-space> coc#refresh()
+
 else 
   if has("unix")
-    inoremap <Nul> <C-x><C-o>
+    inoremap <silent><expr> <c-space> coc#refresh()
+    inoremap <silent><expr> <c-@> coc#refresh()
+    inoremap <Nul> coc#refresh()
   endif
 endif
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Buffers {
 map <leader>b :CtrlPBuffer<CR>
@@ -41,3 +47,10 @@ map <leader>l :bnext<CR>
 map <C-Tab> :bnext<CR>
 map <F4> <esc>:bdelete<CR>
 " }
+"
+" Gotos {
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+"}
