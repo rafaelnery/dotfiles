@@ -27,27 +27,31 @@ call plug#begin($PLUGDIR)
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'othree/eregex.vim'
-  Plug 'sheerun/vim-polyglot'
   Plug 'vim-scripts/groovy.vim'
   Plug 'majutsushi/tagbar'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'Shougo/denite.nvim'
+  Plug 'rafaelnery/denite.nvim'
   Plug 'ctrlpvim/ctrlp.vim'  
   Plug 'editorconfig/editorconfig-vim'
   Plug 'scrooloose/nerdcommenter'
   Plug 'Shougo/neco-vim'
-  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+  Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
   Plug 'neoclide/coc-neco'
+  Plug 'leafgarland/typescript-vim'
 " }
 " CSS, SASS, SCSS e OTHERS {
   Plug 'hail2u/vim-css3-syntax'
   Plug 'cakebaker/scss-syntax.vim'
 " }
-
 " Colors {
   Plug 'morhetz/gruvbox'
-  Plug 'jefersonbelmiro/vim-womprat'
   Plug 'tomasr/molokai'
+  Plug 'schickele/vim-nachtleben'
+  Plug 'liuchengxu/space-vim-theme'
+  Plug 'nanotech/jellybeans.vim'
+  Plug 'larsbs/vimterial_dark'
+  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'kristijanhusak/vim-hybrid-material'
 " }
 call plug#end()
 

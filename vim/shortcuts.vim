@@ -20,7 +20,6 @@ map <leader>t :call NerdToggle()<CR>
 
 map <leader>p :set paste!<CR>
 
-
 " Remover palavra a esquerda ou a direita  no modo inserção com CTRL + DEL ou CTRL + BACKSPACE {
   imap <C-Del> <C-o>dw
   imap <C-Backspace> <C-o>
@@ -41,16 +40,37 @@ endif
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Buffers {
-map <leader>b :CtrlPBuffer<CR>
-map <leader>h :bprevious<CR>
-map <leader>l :bnext<CR>
-map <C-Tab> :bnext<CR>
-map <F4> <esc>:bdelete<CR>
+ map <leader>h :bprevious<CR>
+ map <leader>l :bnext<CR>
+ map <C-Tab> :bnext<CR>
+ map <F4> <esc>:bdelete<CR>
 " }
 "
 " Gotos {
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+ nmap <silent> gd <Plug>(coc-definition)
+ nmap <silent> gy <Plug>(coc-type-definition)
+ nmap <silent> gi <Plug>(coc-implementation)
+ nmap <silent> gr <Plug>(coc-references)
 "}
+
+" Format {
+ vmap <leader>ft <Plug>(coc-format-selected)
+ nmap <leader>ft <Plug>(coc-format-selected)
+"}
+
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+nmap <leader>rf <Plug>(coc-references) 
+nmap <leader>rn <Plug>(coc-rename) 
+nmap <F3> <Plug>(coc-references) 
+nmap <F5> <Plug>(coc-rename) 
+nmap <F12> <Plug>(coc-definition)
+

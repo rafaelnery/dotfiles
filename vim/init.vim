@@ -20,4 +20,11 @@ source $CONFIG_DIR/plugins.vim
 source $CONFIG_DIR/shortcuts.vim
 source $CONFIG_DIR/editor.config.vim
 
-colorscheme molokai
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+let g:hybrid_transparent_background = 1
+let g:airline_theme = "hybrid"
+
+colorscheme hybrid_material
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'

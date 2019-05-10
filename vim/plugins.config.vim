@@ -24,7 +24,7 @@
 
 " VimESearch {
   
-"  let g:esearch = { 'default_mappings': 1, 'adapter': g:search_adapter, 'regex': 1, 'recover_regex': 1 }
+  let g:esearch = { 'default_mappings': 1, 'adapter': g:search_adapter, 'regex': 1, 'recover_regex': 1 }
   let g:esearch#out#win#open = 'enew'
 " }
 
@@ -57,3 +57,7 @@
 " CoC {
 " }
 
+" Denite {
+  call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+  call denite#custom#var('grep', 'command', ['rg'])
+"}
