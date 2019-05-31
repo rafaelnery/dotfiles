@@ -1,11 +1,13 @@
 let $CONFIG_DIR=fnamemodify(expand("$MYVIMRC"), ":p:h")
 
-if !has('nvim') 
+if (!has('nvim'))
   let $CONFIG_DIR=$CONFIG_DIR.'/.vim'
 endif
 
 set background=dark
-set termguicolors
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 if empty(glob('~/.config/vim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs
@@ -20,11 +22,11 @@ source $CONFIG_DIR/plugins.vim
 source $CONFIG_DIR/shortcuts.vim
 source $CONFIG_DIR/editor.config.vim
 
-let g:enable_bold_font = 1
-let g:enable_italic_font = 1
-let g:hybrid_transparent_background = 1
-let g:airline_theme = "hybrid"
+let g:onedark_terminal_italics = 1
+colorscheme one
 
-colorscheme hybrid_material
+let g:airline_theme = 'badwold'
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+
+:hi Normal guifg=white guibg=none

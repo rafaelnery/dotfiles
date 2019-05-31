@@ -17,8 +17,8 @@ map <F2> :w<CR>
 
 map <leader>u :GundoToggle<CR>
 map <leader>t :call NerdToggle()<CR>
-
-map <leader>p :set paste!<CR>
+map <leader>n :call NerdToggle()<CR>
+map <leader>g :G<CR>
 
 " Remover palavra a esquerda ou a direita  no modo inserção com CTRL + DEL ou CTRL + BACKSPACE {
   imap <C-Del> <C-o>dw
@@ -47,10 +47,11 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " }
 "
 " Gotos {
- nmap <silent> gd <Plug>(coc-definition)
- nmap <silent> gy <Plug>(coc-type-definition)
- nmap <silent> gi <Plug>(coc-implementation)
- nmap <silent> gr <Plug>(coc-references)
+ nmap <silent>   gd <Plug>(coc-definition)
+ nmap <C-LeftMouse> <Plug>(coc-definition)
+ nmap <silent>   gy <Plug>(coc-type-definition)
+ nmap <silent>   gi <Plug>(coc-implementation)
+ nmap <silent>   gr <Plug>(coc-references)
 "}
 
 " Format {

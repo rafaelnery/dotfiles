@@ -30,7 +30,7 @@ call plug#begin($PLUGDIR)
   Plug 'vim-scripts/groovy.vim'
   Plug 'majutsushi/tagbar'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'rafaelnery/denite.nvim'
+  Plug 'Shougo/denite.nvim'
   Plug 'ctrlpvim/ctrlp.vim'  
   Plug 'editorconfig/editorconfig-vim'
   Plug 'scrooloose/nerdcommenter'
@@ -38,12 +38,18 @@ call plug#begin($PLUGDIR)
   Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
   Plug 'neoclide/coc-neco'
   Plug 'leafgarland/typescript-vim'
+  Plug 'janko/vim-test'
 " }
+
 " CSS, SASS, SCSS e OTHERS {
   Plug 'hail2u/vim-css3-syntax'
   Plug 'cakebaker/scss-syntax.vim'
 " }
+
 " Colors {
+  
+  Plug 'joshdick/onedark.vim'
+  Plug 'rakr/vim-one'
   Plug 'morhetz/gruvbox'
   Plug 'tomasr/molokai'
   Plug 'schickele/vim-nachtleben'
@@ -52,6 +58,7 @@ call plug#begin($PLUGDIR)
   Plug 'larsbs/vimterial_dark'
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'kristijanhusak/vim-hybrid-material'
+  Plug 'jacoborus/tender.vim'
 " }
 call plug#end()
 
