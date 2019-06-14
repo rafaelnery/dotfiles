@@ -10,14 +10,16 @@ set virtualedit =onemore
 set cursorline                                  " destaca linha  atual
 set cursorcolumn                                " destaca coluna atual
 set number                                      " mostra numero da linha
+set hidden
+set nowrap
 
 set wildmenu
 set wildmode    =list:longest,full              " Command <tab> completion, list matches, then longest common, then all.
 set wildignore  =*.o,*~,*.pyc,CVS,*~,node_modules            " Ignora certos tipos de arquivo
 
-:set tabstop=2
-:set shiftwidth=2
-:set expandtab
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 
 " Syntax {

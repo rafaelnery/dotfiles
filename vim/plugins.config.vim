@@ -1,4 +1,4 @@
-" Author: Rafael Serpa Nery<rafanery0@gmail.com>
+" Author: Rafael Serpa Nery<rafael@nery.info>
 "
 " vim: set sw=2 ts=2 sts=2 et tw=100 foldmarker={,} foldlevel=0 foldmethod=marker:
 
@@ -58,6 +58,36 @@
 " }
 
 " Denite {
+try
   call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
   call denite#custom#var('grep', 'command', ['rg'])
+  " Wrap in try/catch to avoid errors on initial install before plugin is available
+  " === Denite setup ==="
+  " Use ripgrep for searching current directory for files
+  " By default, ripgrep will respect rules in .gitignore
+  "   --files: Print each file that would be searched (but don't search)
+  "   --glob:  Include or exclues files for searching that match the given glob
+  "            (aka ignore .git files)
+  "
+  call denite#custom#source('file/rec', 'sorters', ['sorter/sublime'])
+
+  " Change mappings.
+  call denite#custom#map('insert', '<Down>',   '<denite:move_to_next_line>',     'noremap')
+  call denite#custom#map('insert', '<Up>',     '<denite:move_to_previous_line>', 'noremap')
+  call denite#custom#map('insert', '<Delete>', '<denite:do_action:delete>',      'noremap')
+  
+  autocmd FileType denite call s:denite_my_settings()
+  function! s:denite_my_settings() abort
+    nnoremap <silent><buffer><expr> <CR>    denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> d       denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> p       denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> q       denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i       denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+  endfunction
+
+catch
+  echo 'Denite not installed. It should work after running :PlugInstall'
+endtry
+
 "}
