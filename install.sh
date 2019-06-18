@@ -43,3 +43,6 @@ nvim +CocInstall coc-typescript coc-css coc-html coc-tslint +qall!
 curl -o- https://az764295.vo.msecnd.net/insider/6b2daa3388c0692fad64a32040812c27414b1385/code-insiders_1.34.0-1555997095_amd64.deb > /tmp/code-insiders.deb 
 dpkg -i /tmp/code-insiders.deb
 
+# Remove hotkey for emoji
+gsettings set org.freedesktop.ibus.panel.emoji hotkey \[\]
+

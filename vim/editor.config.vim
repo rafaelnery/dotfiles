@@ -20,7 +20,7 @@ set wildignore  =*.o,*~,*.pyc,CVS,*~,node_modules            " Ignora certos tip
 set tabstop=2
 set shiftwidth=2
 set expandtab
-
+set noshowmode
 
 " Syntax {
   let javaScript_fold   =1                      " JavaScript

@@ -38,7 +38,8 @@ call plug#begin($PLUGDIR)
   Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
   Plug 'neoclide/coc-neco'
   Plug 'leafgarland/typescript-vim'
-  Plug 'janko/vim-test'
+  Plug 'pangloss/vim-javascript'
+  Plug 'maxmellon/vim-jsx-pretty'
 " }
 
 " CSS, SASS, SCSS e OTHERS {

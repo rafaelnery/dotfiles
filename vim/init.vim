@@ -22,11 +22,8 @@ source $CONFIG_DIR/plugins.vim
 source $CONFIG_DIR/shortcuts.vim
 source $CONFIG_DIR/editor.config.vim
 
-colorscheme dracula
-
-let g:airline_theme = 'dracula'
-let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+colorscheme one
+let g:airline_theme = 'one'
 
 "highlight Normal        guifg=white guibg=none
 highlight NormalFloat   guifg=white guibg=#434334
@@ -47,3 +44,4 @@ try
 catch
   echo 'Instal Denite Pls :)'
 endtry
+
