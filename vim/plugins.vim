@@ -43,7 +43,6 @@ call plug#begin($PLUGDIR)
   Plug 'sjl/gundo.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-scripts/groovy.vim'
-  Plug 'nixprime/cpsm' { 'do': 'PY3=ON ./install.sh' }
 " }
 " CSS, SASS, SCSS e OTHERS {
   Plug 'hail2u/vim-css3-syntax'

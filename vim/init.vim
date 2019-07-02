@@ -31,47 +31,6 @@ source $CONFIG_DIR/shortcuts.vim
 source $CONFIG_DIR/editor.config.vim
 
 colorscheme jellybeans
-let g:lightline_buffer_enable_devicons  = 1
-let g:lightline#bufferline#show_number  = 1
-let g:lightline#bufferline#shorten_path = 0
-let g:lightline#bufferline#unnamed      = '[Novo Arquivo]'
-let g:lightline = {}
-let g:lightline.colorscheme        = 'default' 
-let g:lightline.separator          = { 'left': "\ue0c6", 'right': "\ue0c7" }
-let g:lightline.subseparator       = { 'left': "\ue0b5", 'right': "\ue0b7" }
-let g:lightline.component_function = { 
-      \   'gitbranch': 'fugitive#head',
-      \   'cocstatus': 'coc#status',
-      \   'bufferinfo': 'lightline#buffer#bufferinfo',
-      \ }
-let g:lightline.tabline = {
-      \  'left': [ [ 'bufferinfo' ],
-      \            [ 'separator' ],
-      \            [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], 
-      \  ],
-      \  'right': [ [ 'close' ], ],
-      \ }
-let g:lightline.component_expand = {
-      \  'buffercurrent': 'lightline#buffer#buffercurrent',
-      \  'bufferbefore': 'lightline#buffer#bufferbefore',
-      \  'bufferafter': 'lightline#buffer#bufferafter'
-      \ }
-
-let g:lightline.component_type = {
-      \  'buffercurrent': 'tabsel',
-      \  'bufferbefore': 'raw',
-      \  'bufferafter': 'raw'
-      \ }
-
-let g:lightline.component = {
-      \  'separator': '',
-      \ }
-let g:lightline.active  = { 'left': [
-      \   [ 'mode', 'paste' ],
-      \   [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ] 
-      \ ]}
-
- let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 

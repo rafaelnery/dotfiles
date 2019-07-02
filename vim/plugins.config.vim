@@ -82,26 +82,12 @@
 
 " Denite {
 try
-	call denite#custom#source('file_mru', 'matchers', ['matcher/fuzzy', 'matcher/project_files'])
-	call denite#custom#source('file/rec', 'matchers', ['matcher/cpsm'])
+	call denite#custom#source('file/rec', 'sorters', ['sorter/sublime'])
 
-	" Change sorters.
-	call denite#custom#source(
-	\ 'file/rec', 'sorters', ['sorter/sublime'])
 
   call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
   call denite#custom#var('grep', 'command', ['rg'])
-  " Wrap in try/catch to avoid errors on initial install before plugin is available
-  " === Denite setup ==="
-  " Use ripgrep for searching current directory for files
-  " By default, ripgrep will respect rules in .gitignore
-  "   --files: Print each file that would be searched (but don't search)
-  "   --glob:  Include or exclues files for searching that match the given glob
-  "            (aka ignore .git files)
-  "
-  call denite#custom#source('file/rec', 'sorters', ['sorter/sublime'])
 
-  " Change mappings.
   call denite#custom#map('insert', '<Down>',   '<denite:move_to_next_line>',     'noremap')
   call denite#custom#map('insert', '<Up>',     '<denite:move_to_previous_line>', 'noremap')
   call denite#custom#map('insert', '<Delete>', '<denite:do_action:delete>',      'noremap')
@@ -113,7 +99,7 @@ try
     nnoremap <silent><buffer><expr> p       denite#do_map('do_action', 'preview')
     nnoremap <silent><buffer><expr> q       denite#do_map('quit')
     nnoremap <silent><buffer><expr> i       denite#do_map('open_filter_buffer')
-    nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+    nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select')
   endfunction
 
 catch
@@ -121,3 +107,46 @@ catch
 endtry
 
 "}
+
+" LightLine {
+
+let g:lightline_buffer_enable_devicons  = 1
+let g:lightline#bufferline#show_number  = 1
+let g:lightline#bufferline#shorten_path = 0
+let g:lightline#bufferline#unnamed      = '[Novo Arquivo]'
+let g:lightline = {}
+let g:lightline.colorscheme        = 'default' 
+let g:lightline.separator          = { 'left': "\ue0c6", 'right': "\ue0c7" }
+let g:lightline.subseparator       = { 'left': "\ue0b5", 'right': "\ue0b7" }
+let g:lightline.component_function = { 
+      \   'gitbranch': 'fugitive#head',
+      \   'cocstatus': 'coc#status',
+      \   'bufferinfo': 'lightline#buffer#bufferinfo',
+      \ }
+let g:lightline.tabline = {
+      \  'left': [ [ 'bufferinfo' ],
+      \            [ 'separator' ],
+      \            [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], 
+      \  ],
+      \  'right': [ [ 'close' ], ],
+      \ }
+let g:lightline.component_expand = {
+      \  'buffercurrent': 'lightline#buffer#buffercurrent',
+      \  'bufferbefore': 'lightline#buffer#bufferbefore',
+      \  'bufferafter': 'lightline#buffer#bufferafter'
+      \ }
+
+let g:lightline.component_type = {
+      \  'buffercurrent': 'tabsel',
+      \  'bufferbefore': 'raw',
+      \  'bufferafter': 'raw'
+      \ }
+
+let g:lightline.component = {
+      \  'separator': '',
+      \ }
+let g:lightline.active  = { 'left': [
+      \   [ 'mode', 'paste' ],
+      \   [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ] 
+      \ ]}
+" }
