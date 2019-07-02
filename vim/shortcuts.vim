@@ -2,11 +2,11 @@ function! NerdToggle()
   if g:NERDTree.IsOpen() 
     :NERDTreeToggle
   else 
-     if bufexists(expand('%')) 
-       :NERDTreeFind
-     else 
-       :NERDTreeToggle
-     endif
+    if bufexists(expand('%')) 
+      :NERDTreeFind
+    else 
+      :NERDTreeToggle
+    endif
   endif
 endfunction
 
@@ -14,19 +14,22 @@ let mapleader = ","
 
 imap <F2> <esc>:w<CR>
 map <F2> :w<CR>
-
+map <C-b> :Denite buffer -split=floating<CR>
+map <C-B> :Denite buffer -split=floating<CR>
+noremap <C-m> :Denite file_mru -split=floating<CR>
+noremap <C-M> :Denite file_mru -split=floating<CR>
 map <leader>u :GundoToggle<CR>
 map <leader>t :call NerdToggle()<CR>
 map <leader>n :call NerdToggle()<CR>
 map <leader>g :G<CR>
 
 " Remover palavra a esquerda ou a direita  no modo inserção com CTRL + DEL ou CTRL + BACKSPACE {
-  imap <C-Del> <C-o>dw
-  imap <C-Backspace> <C-o>
+imap <C-Del> <C-o>dw
+imap <C-Backspace> <C-o>
 " }
 
 if has("gui_running")
-"  inoremap <C-Space> <C-x><C-o>
+  "  inoremap <C-Space> <C-x><C-o>
   inoremap <silent><expr> <c-space> coc#refresh()
 
 else 
@@ -40,23 +43,23 @@ endif
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Buffers {
- map <leader>h :bprevious<CR>
- map <leader>l :bnext<CR>
- map <C-Tab> :bnext<CR>
- map <F4> <esc>:bdelete<CR>
+map <leader>h :bprevious<CR>
+map <leader>l :bnext<CR>
+map <C-Tab> :bnext<CR>
+map <F4> <esc>:bdelete<CR>
 " }
 "
 " Gotos {
- nmap <silent>   gd <Plug>(coc-definition)
- nmap <C-LeftMouse> <Plug>(coc-definition)
- nmap <silent>   gy <Plug>(coc-type-definition)
- nmap <silent>   gi <Plug>(coc-implementation)
- nmap <silent>   gr <Plug>(coc-references)
+nmap <silent>   gd <Plug>(coc-definition)
+nmap <C-LeftMouse> <Plug>(coc-definition)
+nmap <silent>   gy <Plug>(coc-type-definition)
+nmap <silent>   gi <Plug>(coc-implementation)
+nmap <silent>   gr <Plug>(coc-references)
 "}
 
 " Format {
- vmap <leader>ft <Plug>(coc-format-selected)
- nmap <leader>ft <Plug>(coc-format-selected)
+vmap <leader>ft <Plug>(coc-format-selected)
+nmap <leader>ft <Plug>(coc-format-selected)
 "}
 
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>

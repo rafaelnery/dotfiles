@@ -15,38 +15,40 @@ endif
 call plug#begin($PLUGDIR)
 
 " Core {
+  "Plug 'vim-airline/vim-airline'
+  "Plug 'vim-airline/vim-airline-themes'
+  Plug 'Shougo/denite.nvim'
+  Plug 'Shougo/neco-vim'
+  Plug 'Shougo/neomru.vim'
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'ctrlpvim/ctrlp.vim'  
+  Plug 'editorconfig/editorconfig-vim'
   Plug 'ervandew/supertab'
   Plug 'eugen0329/vim-esearch'
+  Plug 'itchyny/lightline.vim'
   Plug 'jiangmiao/auto-pairs'
+  Plug 'leafgarland/typescript-vim'
   Plug 'luochen1990/rainbow'
+  Plug 'majutsushi/tagbar'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'taohexxx/lightline-buffer'
   Plug 'mhinz/vim-signify'
+  Plug 'neoclide/coc-neco'
+  Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+  Plug 'othree/eregex.vim'
+  Plug 'pangloss/vim-javascript'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
   Plug 'sjl/gundo.vim'
   Plug 'tpope/vim-fugitive'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'othree/eregex.vim'
   Plug 'vim-scripts/groovy.vim'
-  Plug 'majutsushi/tagbar'
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'Shougo/denite.nvim'
-  Plug 'ctrlpvim/ctrlp.vim'  
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'Shougo/neco-vim'
-  Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
-  Plug 'neoclide/coc-neco'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'pangloss/vim-javascript'
-  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'nixprime/cpsm' { 'do': 'PY3=ON ./install.sh' }
 " }
-
 " CSS, SASS, SCSS e OTHERS {
   Plug 'hail2u/vim-css3-syntax'
   Plug 'cakebaker/scss-syntax.vim'
 " }
-
 " Colors {
   
   Plug 'joshdick/onedark.vim'
@@ -61,6 +63,7 @@ call plug#begin($PLUGDIR)
   Plug 'kristijanhusak/vim-hybrid-material'
   Plug 'jacoborus/tender.vim'
 " }
+
 call plug#end()
 
 source $CONFIG_DIR/plugins.config.vim

@@ -21,6 +21,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set noshowmode
+set showtabline=2
 
 " Syntax {
   let javaScript_fold   =1                      " JavaScript

@@ -22,9 +22,6 @@
   let g:airline_powerline_fonts = 1
   let g:airline_left_sep = "\uE0C0"
   let g:airline_right_sep = "\uE0C2"
-  let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-  let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
-  let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
   let g:airline_mode_map = {
         \ '__'     : '-',
         \ 'c'      : 'C',
@@ -85,6 +82,13 @@
 
 " Denite {
 try
+	call denite#custom#source('file_mru', 'matchers', ['matcher/fuzzy', 'matcher/project_files'])
+	call denite#custom#source('file/rec', 'matchers', ['matcher/cpsm'])
+
+	" Change sorters.
+	call denite#custom#source(
+	\ 'file/rec', 'sorters', ['sorter/sublime'])
+
   call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
   call denite#custom#var('grep', 'command', ['rg'])
   " Wrap in try/catch to avoid errors on initial install before plugin is available

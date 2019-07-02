@@ -1,3 +1,5 @@
 {
-  "coc.preferences.codeLens.enable": true
+  "coc.preferences.codeLens.enable": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
