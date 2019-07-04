@@ -16,13 +16,12 @@ imap <F2> <esc>:w<CR>
 map <F2> :w<CR>
 map <C-b> :Denite buffer -split=floating<CR>
 map <C-B> :Denite buffer -split=floating<CR>
-noremap <C-m> :Denite file_mru -split=floating<CR>
-noremap <C-M> :Denite file_mru -split=floating<CR>
+noremap <leader>' :Denite file_mru -split=floating<CR>
+noremap <leader>' :Denite file_mru -split=floating<CR>
 map <leader>u :GundoToggle<CR>
 map <leader>t :call NerdToggle()<CR>
 map <leader>n :call NerdToggle()<CR>
-map <leader>g :G<CR>
-
+map <leader>g :Denite grep -split=floating<CR>
 " Remover palavra a esquerda ou a direita  no modo inserção com CTRL + DEL ou CTRL + BACKSPACE {
 imap <C-Del> <C-o>dw
 imap <C-Backspace> <C-o>

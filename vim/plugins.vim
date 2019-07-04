@@ -31,7 +31,6 @@ call plug#begin($PLUGDIR)
   Plug 'luochen1990/rainbow'
   Plug 'majutsushi/tagbar'
   Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'taohexxx/lightline-buffer'
   Plug 'mhinz/vim-signify'
   Plug 'neoclide/coc-neco'
   Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
@@ -41,6 +40,7 @@ call plug#begin($PLUGDIR)
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
   Plug 'sjl/gundo.vim'
+  Plug 'taohexxx/lightline-buffer'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-scripts/groovy.vim'
 " }
