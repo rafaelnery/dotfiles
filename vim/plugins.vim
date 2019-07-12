@@ -26,14 +26,11 @@ call plug#begin($PLUGDIR)
   Plug 'ervandew/supertab'
   Plug 'eugen0329/vim-esearch'
   Plug 'itchyny/lightline.vim'
-  Plug 'jiangmiao/auto-pairs'
   Plug 'leafgarland/typescript-vim'
   Plug 'luochen1990/rainbow'
   Plug 'majutsushi/tagbar'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'mhinz/vim-signify'
-  Plug 'neoclide/coc-neco'
-  Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
   Plug 'othree/eregex.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'ryanoasis/vim-devicons'
@@ -44,7 +41,12 @@ call plug#begin($PLUGDIR)
   Plug 'tpope/vim-fugitive'
   Plug 'vim-scripts/groovy.vim'
 " }
-" CSS, SASS, SCSS e OTHERS {
+" CocNViM {
+  Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+  Plug 'neoclide/coc-neco'
+" }
+
+"" CSS, SASS, SCSS e OTHERS {
   Plug 'hail2u/vim-css3-syntax'
   Plug 'cakebaker/scss-syntax.vim'
 " }
