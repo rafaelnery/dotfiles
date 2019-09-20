@@ -36,6 +36,7 @@ make install
 cd $INSTALL_DIR
 ln -sf $INSTALL_DIR/vim ~/.config/nvim
 update-alternatives --install /usr/local/bin/vim vim /usr/local/bin/nvim 60
+chown ~/ -R $USER
 nvim +PlugInstall +qall!
 nvim +CocInstall coc-typescript coc-css coc-html coc-tslint +qall!
 
@@ -46,3 +47,6 @@ dpkg -i /tmp/code-insiders.deb
 # Remove hotkey for emoji
 gsettings set org.freedesktop.ibus.panel.emoji hotkey \[\]
 
+nvm install v10
+
+npm install -g @angular/cli typescript 

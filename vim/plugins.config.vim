@@ -82,7 +82,30 @@
 
 " Denite {
 try
-	call denite#custom#source('file/rec', 'sorters', ['sorter/sublime'])
+
+  call denite#custom#option('default', {
+        \ 'auto_resume': 1,
+        \ 'winheight': 15,
+        \ 'reversed': 1,
+        \ 'prompt': '❯ ',
+        \ 'start_filter': 1,
+        \ })
+
+  augroup ps_denite_setup
+    au!
+    au FileType denite-filter call s:denite_filter_mappings()
+  augroup END
+  function! s:denite_filter_mappings() abort
+    inoremap <silent><buffer><expr> <ESC> denite#do_map('quit')
+    inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+    inoremap <silent><buffer> <C-j>
+          \ <Esc><C-w>p:call cursor(line('.')+1,0)<CR><C-w>pA
+    inoremap <silent><buffer> <C-k>
+          \ <Esc><C-w>p:call cursor(line('.')-1,0)<CR><C-w>pA
+  endfunction
+
+
+  call denite#custom#source('file/rec', 'sorters', ['sorter/sublime'])
 
 
   call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])

@@ -8,8 +8,10 @@ augroup END
 let g:neomru#filename_format=":."
 let $CONFIG_DIR=fnamemodify(expand("$MYVIMRC"), ":p:h")
 
+let g:editor_type="nvim"
 if (!has('nvim'))
   let $CONFIG_DIR=$CONFIG_DIR.'/.vim'
+  let g:editor_type="vim"
 endif
 
 set background=dark
@@ -23,21 +25,23 @@ if empty(glob('~/.config/vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-let g:swap_dir =$CONFIG_DIR.'/swap'
-let g:undo_dir =$CONFIG_DIR.'/undo'
+let g:swap_dir ='~/.config/vim_nvim/' . g:editor_type . '/swap'
+let g:bkp_dir  ='~/.config/vim_nvim/' . g:editor_type . '/bkp'
+let g:undo_dir ='~/.config/vim_nvim/' . g:editor_type . '/undo'
 
 source $CONFIG_DIR/plugins.vim
 source $CONFIG_DIR/shortcuts.vim
 source $CONFIG_DIR/editor.config.vim
 
-colorscheme jellybeans
+colorscheme molokai
 
-autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
+highlight Normal        guibg=none
+highlight NonText       guibg=none
 
-"highlight Normal        guifg=white guibg=none
-highlight NormalFloat   guifg=white guibg=#434334
+highlight NormalFloat   guibg=#757575
 highlight CursorLine    guibg=#434343 
 highlight CursorColumn  guibg=#434343 
+
 
 " Custom menu in Denite
 try 

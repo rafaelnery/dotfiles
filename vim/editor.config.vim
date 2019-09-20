@@ -17,6 +17,9 @@ set wildmenu
 set wildmode    =list:longest,full              " Command <tab> completion, list matches, then longest common, then all.
 set wildignore  =*.o,*~,*.pyc,CVS,*~,node_modules            " Ignora certos tipos de arquivo
 
+set smartcase
+set ignorecase
+
 set tabstop=2
 set shiftwidth=2
 set expandtab

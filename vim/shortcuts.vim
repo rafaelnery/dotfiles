@@ -16,6 +16,8 @@ imap <F2> <esc>:w<CR>
 map <F2> :w<CR>
 map <C-b> :Denite buffer -split=floating<CR>
 map <C-B> :Denite buffer -split=floating<CR>
+map <C-p> :Denite file/rec<CR>
+map <C-P> :Denite file/rec<CR>
 noremap <leader>' :Denite file_mru -split=floating<CR>
 noremap <leader>' :Denite file_mru -split=floating<CR>
 map <leader>u :GundoToggle<CR>
@@ -58,11 +60,13 @@ nmap <silent>   gr <Plug>(coc-references)
 
 " Format {
 vmap <leader>ft <Plug>(coc-format-selected)
-nmap <leader>ft <Plug>(coc-format-selected)
+nmap <leader>ft :call CocAction('format')<CR>
+nmap <leader>o :call CocAction('runCommand', 'editor.action.organizeImport')<cr>
 "}
 
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> <F1> :call <SID>show_documentation()<CR>
+inoremap <silent> <F1> <ESC>:call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
