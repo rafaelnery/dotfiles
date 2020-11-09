@@ -22,9 +22,10 @@ call plug#begin($PLUGDIR)
   Plug 'Shougo/neomru.vim'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'ervandew/supertab'
+"  Plug 'ervandew/supertab'
   Plug 'eugen0329/vim-esearch'
-  Plug 'leafgarland/typescript-vim'
+"  Plug 'leafgarland/typescript-vim'
+  Plug 'HerringtonDarkholme/yats.vim'
   Plug 'luochen1990/rainbow'
   Plug 'majutsushi/tagbar'
   Plug 'maxmellon/vim-jsx-pretty'
@@ -43,7 +44,7 @@ call plug#begin($PLUGDIR)
 
 " }
 " CocNViM {
-  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'neoclide/coc-neco'
 " }
 
@@ -53,14 +54,13 @@ call plug#begin($PLUGDIR)
 " }
 " Colors {
   
-  Plug 'joshdick/onedark.vim'
-  Plug 'rakr/vim-one'
   Plug 'morhetz/gruvbox'
   Plug 'tomasr/molokai'
-  Plug 'liuchengxu/space-vim-theme'
   Plug 'nanotech/jellybeans.vim'
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'kristijanhusak/vim-hybrid-material'
+  Plug 'NLKNguyen/papercolor-theme'
+  Plug 'goatslacker/mango.vim'
 " }
 
 call plug#end()

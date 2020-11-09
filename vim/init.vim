@@ -1,6 +1,7 @@
 " Since NVIM v0.4.0-464-g5eaa45547, commit 5eaa45547975c652e594d0d6dbe34c1316873dc7
 " 'secure' is set when 'modeline' is set, which will cause a lot of commands
 " cannot run in autocmd when opening help page.
+set pyxversion=3
 augroup secure_modeline_conflict_workaround
   autocmd!
   autocmd FileType help setlocal nomodeline
@@ -25,6 +26,9 @@ if empty(glob('~/.config/vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+autocmd BufNewFile,BufRead *.fcc setfiletype html
+autocmd BufNewFile,BufRead *.unauth setfiletype html
+
 let g:swap_dir ='~/.config/vim_nvim/' . g:editor_type . '/swap'
 let g:bkp_dir  ='~/.config/vim_nvim/' . g:editor_type . '/bkp'
 let g:undo_dir ='~/.config/vim_nvim/' . g:editor_type . '/undo'
@@ -33,15 +37,13 @@ source $CONFIG_DIR/plugins.vim
 source $CONFIG_DIR/shortcuts.vim
 source $CONFIG_DIR/editor.config.vim
 
-colorscheme molokai
-
+colorscheme jellybeans
 highlight Normal        guibg=none
 highlight NonText       guibg=none
 
 highlight NormalFloat   guibg=#757575
 highlight CursorLine    guibg=#434343 
 highlight CursorColumn  guibg=#434343 
-
 
 " Custom menu in Denite
 try 
